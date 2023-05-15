@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { getRandomColor } from 'utils/getRandomColors';
 import css from './Statistics.module.css';
 
 export const Statistics = ({ title, stats }) => {
@@ -9,9 +10,7 @@ export const Statistics = ({ title, stats }) => {
       <ul className={css.statList}>
         {stats.map(stat => {
           const bgColor = {
-            backgroundColor: `hsl(${Math.floor(
-              Math.random() * 360
-            )}, 100%, 30%)`,
+            backgroundColor: getRandomColor(),
           };
           return (
             <li className={css.item} style={bgColor} key={stat.id}>
